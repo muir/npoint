@@ -94,7 +94,7 @@ func TestTestFramework(t *testing.T) {
 		bodyReceived = string(buf)
 		headerReceived = r.Header.Get("X-Test-Request")
 		w.Header().Set("X-Test-Respond", "H1")
-		w.Write([]byte("some data written"))
+		_, _ = w.Write([]byte("some data written"))
 		w.WriteHeader(203)
 	})
 	h := make(http.Header)

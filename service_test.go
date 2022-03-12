@@ -11,18 +11,6 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-var (
-	// Use a custom Transport because httptest "helpfully" kills idle
-	// connections on the default transport when a httptest server shuts
-	// down.
-	tr = &http.Transport{
-		// Disable keepalives to avoid the hassle of closing idle
-		// connections after each test.
-		DisableKeepAlives: true,
-	}
-	client = &http.Client{Transport: tr}
-)
-
 func TestStaticInitializerWaitsForStart(t *testing.T) {
 	t.Parallel()
 	var debugOutput string
@@ -324,4 +312,3 @@ func multiStartups(
 		afterCall2(n)
 	}
 }
-

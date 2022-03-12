@@ -30,7 +30,7 @@ func ExampleCreateEndpoint() {
 func WriteErrorResponse(inner func() nject.TerminalError, w http.ResponseWriter) {
 	err := inner()
 	if err != nil {
-		w.Write([]byte(err.Error()))
+		_, _ = w.Write([]byte(err.Error()))
 		w.WriteHeader(500)
 	}
 }
