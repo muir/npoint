@@ -13,6 +13,7 @@ Install:
 
 ---
 
+Prior to [nject](https://github.com/muir/nject) version 0.2.0, this was part of that repo.
 Starting with release 0.2.0, all functions and types that depend upon gorilla/mux
 have been moved to a new package [nape](https://github.com/muir/nape).  Users of
 npoint that were using those APIs should simply switch to the new package.
